@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIDEO_DEMO</title></head><body>
+<p align="center">
+    <button onclick="playVid()" type="button">Play Video</button>
+    <button onclick="pauseVid()" type="button">Pause Video</button><br></p>
+
+<video id="myVideo">
+    <source src="beauty_and_beast.mp4" type="video/mp4">
+
+    <script>
+        var vid = document.getElementById("myVideo");
+
+        function playVid() {
+            vid.play();
+        }
+
+        function pauseVid() {
+            vid.pause();
+        }
+    </script>
+
+
+</body>
+</html>

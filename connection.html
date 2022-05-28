@@ -1,0 +1,43 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" >
+        function loadDB()
+        {
+            var connection = new ActiveXObject("ADODB.Connection");
+          
+            var connectionstring = "Data Source=.;Initial Catalog=MEDIA;Persist Security Info=True;User ID=system;Password=vibha;Provider=SQLOLEDB";
+            connection.OPEN(connectionstring);
+            var rs = new ActiveXObject("ADODB.Recordset");           
+            rs.OPEN("select * from media", connection);
+            rs.MoveNext();
+            var span = document.createElement("span");
+            span.style.color = "Blue";
+            span.innerText = "MOVIE_ID "+" MOVIE_IMG "+" MOVIE_VIDEO";
+            document.body.appendChild(span);
+            while (!rs.eof)
+            {
+                var span = document.createElement("span");
+                span.style.color = "green";
+                span.innerText = "\n " + rs.fields(0) +" |  "+ rs.fields(1) +" |  "+ rs.fields(2);
+                document.body.appendChild(span);
+                rs.MoveNext();
+            }
+ 
+            rs.close();
+            connection.close();
+        }
+    </script>
+    <style type="text/css">
+        #main {
+            height: 264px;
+        }
+    </style>
+</head>
+<body onload="loadDB()">
+    <div id="show" style="font-size: x-large; font-weight: bold">
+        MEDIA DETAILS</div>
+</body>
+</html>

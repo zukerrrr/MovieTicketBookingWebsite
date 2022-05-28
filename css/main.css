@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7 Feb, 2017, 2:11:21 PM
+    Author     : Admin
+*/
+
+body,input,button
+{
+   font: 14px "Trebuchet MS", sans-serif;
+   
+}
+input:-moz-focus-inner,
+button:-moz-focus-inner
+{
+    border: 0;
+    padding: 0;    
+}
+input[type="submit"].button,
+button.button{
+    cursor: pointer;
+    outline: none;
+}
+.button{
+    padding: 8px 16px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;
+    background-color: #f83;
+    border: 0;
+    margin: 0;
+    
+}
+.button-primary{
+    background: #ff7f50;
+    color: #fff;
+    }
+.button-primary:hover{
+	  text-shadow: 0px 0px 1px #000;
+	  background:#292929;
+}
